@@ -1,0 +1,231 @@
+@font-face {
+    font-family: "Monda";
+    src: url("/css/font/Monda.ttf");
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+body {
+    margin: 0px;
+    border: 0px;
+    text-align: center;
+    color: white;
+    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+.pond {
+    text-align: center;
+    color: white;
+    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", sans-serif;
+}
+@keyframes bgzoomout {
+    /* A junky animation lets the bg zoom out at the center of screen */
+    from {
+        top: 16.5%;
+        left: 16.5%;
+        opacity: 0;
+        width: 66%;
+        height: 66%;
+    }
+    to {
+        top: 0%;
+        left: 0%;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+}
+#bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0px;
+    z-index: -2;
+    opacity: 0;
+    background-size: cover;
+    animation: bgzoomout 0.33s ease-out 1.5s;
+    animation-fill-mode: forwards;
+    /* animation: bgbreathe 6s ease 2.5s infinite; */
+}
+@keyframes bgdarken {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#bgmask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0px;
+    opacity: 0;
+    z-index: -1;
+    background-image: url("/pic/deco/blackmask.png");
+    animation: bgdarken 0.5s ease-out 0s;
+    animation-fill-mode: forwards;
+}
+@keyframes slideup {
+    from {
+        position: absolute;
+        top: 320px;
+        opacity: 0;
+    }
+    to {
+        position: absolute;
+        top: 64px;
+        opacity: 1;
+    }
+}
+.main {
+    width: 100%;
+    opacity: 0;
+    animation: slideup 0.5s ease-out 1s;
+    animation-fill-mode: forwards;
+}
+#title {
+    font-size: 2.4em;
+    padding: 24px auto;
+    margin: 0;
+}
+.browsehappy {
+    background-color: #c54141;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    width: 100%;
+}
+@keyframes crossin {
+    from {
+        width: 100%;
+    }
+    to{
+        width: 75%;
+    }
+}
+#itemlist {
+    width: 100%;
+    margin: auto;
+    animation: crossin 0.5s ease-out 1s;
+    animation-fill-mode: forwards;
+}
+.item {
+    font-size: 1.6em;
+    width: 74%;
+    position: inherit;
+}
+.item a {
+    text-decoration: none;
+}
+.item.left {
+    text-align: left;
+    left: 0;
+    margin-right: auto;
+}
+.item.right {
+    text-align: right;
+    right: 0;
+    margin-left: auto;
+}
+.item.arrow {
+    font-style: italic;
+    font-size: 1.4em;
+    padding-left: 0.5em;
+}
+.item.description {
+    font-size: 0.66em;
+}
+.item.border{
+    height: 1px;
+    border-bottom: 1px white solid;
+    margin-bottom: 1.5em;
+    /* width: 90%; */
+}
+@keyframes crossout {
+    from {
+        width: 15%;
+    }
+    to {
+        width: 57%;
+    }
+}
+.hitokoto {
+    position: relative;
+    width: 15%;
+    margin: auto;
+    font-size: 1.6em;
+    /* font-weight: 700; */ /* bold */
+    text-align: left;
+    margin: 0px auto 64px auto;
+    animation: crossout 0.5s ease-out 1s;
+    animation-fill-mode: forwards;
+    transition: all 0.5s;
+}
+.bracket.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#hitokoto {
+    display: none;
+}
+.hitokotod {
+    padding: 15px 50px;
+    min-height: 1.8em;
+}
+#hitokotop {
+    min-height: 1.6em;
+}
+.bracket.right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.copyright {
+    font-size: 0.8em;
+    color: #666666;
+    width: 100%;
+    margin: 48px 0px;
+    /* display: none; */
+}
+@media (max-width: 950px){
+    #title {
+        font-size: 1.8em;
+    }
+    .item {
+        width: 100%;
+        font-size: 1.2em;
+    }
+    .item.right {
+        text-align: left;
+    }
+    @keyframes crossin {
+        from {
+            width: 80%;
+        }
+        to{
+            width: 95%;
+        }
+    }
+    @keyframes crossout {
+        from {
+            width: 15%;
+        }
+        to {
+            width: 100%;
+        }
+    }
+    .hitokoto {
+        width: 100%;
+        font-size: 1em;
+    }
+    .copyright {
+        margin: 8px auto;
+        color: #333333;
+    }
+}
