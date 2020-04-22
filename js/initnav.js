@@ -32,8 +32,9 @@ var navs = [{
     }
 ];
 
-for (i of navs) {
+for (i in navs) {
+    var j = navs[i];
     nav.innerHTML += '\
-        <li><a href="'+i.link+'" target="'+i.target+'">'+i.nameA+'</a></li>\
+        <li><a href="'+j.link+'" target="'+j.target+'">'+j.nameA+'</a></li>\
     ';
 }

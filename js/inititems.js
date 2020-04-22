@@ -40,12 +40,13 @@ var items = [{
 ];
 
 
-for (i of items) {
+for (i in items) {
+    var j = items[i];
     direction = isOdd(++count) ? 'left' : 'right';
     itemlist.innerHTML += '\
         <div class="item '+direction+'">\
-        <a href="'+i.link+'">'+i.nameA+' - '+i.nameB+'<span class="item arrow">>></span></a>\
-        <div class="item '+direction+' description">'+i.description+'</div>\
+        <a href="'+j.link+'">'+j.nameA+' - '+j.nameB+'<span class="item arrow">>></span></a>\
+        <div class="item '+direction+' description">'+j.description+'</div>\
         <div class="item '+direction+' border"></div>\
         </div>\
     ';
