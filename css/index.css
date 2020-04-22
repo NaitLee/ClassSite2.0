@@ -15,15 +15,15 @@ body {
     border: 0px;
     text-align: center;
     color: white;
-    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", SimHei, "黑体", sans-serif;
 }
 .pond {
     text-align: center;
     color: white;
-    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", sans-serif;
+    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", SimHei, "黑体", sans-serif;
 }
-@keyframes bgzoomout {
-    /* A junky animation lets the bg zoom out at the center of screen */
+@keyframes bgsplash {
+    /* A junky animation that lets the bg splash and zoom at the center of screen */
     from {
         top: 16.5%;
         left: 16.5%;
@@ -47,17 +47,8 @@ body {
     z-index: -2;
     opacity: 0;
     background-size: cover;
-    animation: bgzoomout 0.33s ease-out 1.5s;
+    animation: bgsplash 0.33s ease-out 1.5s;
     animation-fill-mode: forwards;
-    /* animation: bgbreathe 6s ease 2.5s infinite; */
-}
-@keyframes bgdarken {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 #bgmask {
     width: 100%;
@@ -67,10 +58,10 @@ body {
     opacity: 0;
     z-index: -1;
     background-image: url("/pic/deco/blackmask.png");
-    animation: bgdarken 0.5s ease-out 0s;
+    animation: fadein 0.5s ease-out 0s;
     animation-fill-mode: forwards;
 }
-@keyframes slideup {
+@keyframes contentslide {
     from {
         position: absolute;
         top: 320px;
@@ -84,13 +75,14 @@ body {
 }
 .main {
     width: 100%;
+	position: absolute;
+	top: 64px;
     opacity: 0;
-    animation: slideup 0.5s ease-out 1s;
+    animation: contentslide 0.5s ease-out 1s;
     animation-fill-mode: forwards;
 }
 #title {
     font-size: 2.4em;
-    padding: 24px auto;
     margin: 0;
 }
 .browsehappy {
@@ -121,6 +113,11 @@ body {
 }
 .item a {
     text-decoration: none;
+    transition: all 0.3s;
+}
+.item a:hover {
+    color: #333333;
+    background-color: white;
 }
 .item.left {
     text-align: left;
@@ -132,10 +129,24 @@ body {
     right: 0;
     margin-left: auto;
 }
+@keyframes swing {
+    0% {
+        left: 0em;
+    }
+    50% {
+        left: 0.5em;
+    }
+    100% {
+        left: 0em;
+    }
+}
 .item.arrow {
+    position: relative;
     font-style: italic;
     font-size: 1.4em;
     padding-left: 0.5em;
+    animation: swing 2.4s ease-in 0.1s infinite;
+    animation-fill-mode: forwards;
 }
 .item.description {
     font-size: 0.66em;
@@ -171,20 +182,28 @@ body {
     left: 0;
     top: 0;
 }
-#hitokoto {
-    display: none;
+.bracket.right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
+#hitokoto {
+    /* display: none; */
+    opacity: 0;
+    text-align: center;
+    padding: 15px 50px;
+    min-height: 1.8em;
+    animation: fadein 0.5s ease-out 2s;
+    animation-fill-mode: forwards;
+}
+/* Below two is for printing effected hitokoto usage */
 .hitokotod {
+    display: none;
     padding: 15px 50px;
     min-height: 1.8em;
 }
 #hitokotop {
     min-height: 1.6em;
-}
-.bracket.right {
-    position: absolute;
-    right: 0;
-    bottom: 0;
 }
 .copyright {
     font-size: 0.8em;
@@ -193,6 +212,7 @@ body {
     margin: 48px 0px;
     /* display: none; */
 }
+/* Below is for devices that goes with a width < 950px */
 @media (max-width: 950px){
     #title {
         font-size: 1.8em;
