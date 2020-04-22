@@ -71,7 +71,7 @@
             noticetitle.innerHTML = title;
             noticecontent.innerHTML = content;
             $('.notice').slideDown(160);
-            setTimeout(function(){$('.notice').fadeOut(600);}, 2400);
+            setTimeout(function(){$('.notice').fadeOut(600);}, 3200);
         }
     </script>
     <script>
@@ -83,8 +83,8 @@
     </script>
     <script>
         function previewopen() {
-            $('#previewopen').slideUp();
             $('.preview').slideDown();
+            $('#previewopen').slideUp();
         }
         function previewclose() {
             $('.preview').slideUp();
@@ -175,7 +175,7 @@
         <div id="noticetitle"></div>
         <div id="noticecontent"></div>
     </div>
-    <div id="title">== {.!Here is.} {.!class-name.} {.!ClassSite.}{.!, Welcome!.} ==</div>
+    <div id="title">{.!Here is.} {.!class-name.} {.!ClassSite.}{.!, Welcome!.}</div>
     <div>%login-link%%loggedin%<div class=big><a href="/">&#127968;{.!Homepage.} </a><span id="swapDir">%folder%</span>
             <script type="text/javascript" language="javascript">
                 browseAbleFolderTree("%folder%")
@@ -695,8 +695,8 @@ iframe.previewiframe {
 }
 
 @media (max-width: 950px) {
-    title {
-        font-size: 1em;
+    #title {
+        font-size: 1.08em;
     }
     .preview {
         position: fixed;
@@ -760,3 +760,69 @@ iframe.previewiframe {
 
 {.comment|Define your class name below.}
 class-name=1824
+
+{.comment|Simplified Chinese translations.}
+{.comment|Remove below texts to disable.}
+
+Here is=这里是
+ClassSite=班级网站
+, Welcome!=，欢迎！
+Login=登录
+Homepage=主页
+Search requires 3 or more characters=进行搜索需要输入 3 个或以上字符！
+Download these=打包这
+files in a .tar archive?=个文件为 .tar 压缩文件下载吗？
+Click to Archive=点击打包下载
+Upload Files=上传文件
+Click to sort files by this=点击以此排序文件
+FileName=文件名
+Date on Edit=修改日期
+Size=大小
+link=链接
+folder=文件夹
+It seems nothing here...=这里好像什么都没有……
+Search files here...=搜索这里的文件……
+You have found the 404 page=您发现了一个 404 页面
+Redirecting=正在重定向至主页……
+There are more people than on a worktime bus station=当前访问人数大于春运高铁站人数
+Returning to previous page after traffic afford has gone lower...=交通压力缓解后将返回上一页……
+There are ongoing downloads=已有正在进行的下载任务
+More available after current downloads finish=当前下载结束后将可用
+Please login to your account=请登录至您的管理员账户
+Authorization failed=登录授权失败
+Wrong username or password=用户名或密码错误
+Access Denied=请求被拒绝
+Nope=不可以的哟~ ;P
+Upload to=上传至
+PLEASE PUT MULTIPLE FILES INTO A ZIP FILE=请将更多的文件压缩后上传
+Back=返回
+Free Space Available For Upload=服务器可供上传的剩余空间
+Adding an upload selection will cause file selections reset=添加上传项将导致文件选项重置
+Only the first selection supports multi-file selection=仅第一个上传项支持文件多选
+Add Upload=点这里添加一个上传项
+Send File(s)=点击上传
+Results page appears after uploads complete=上传结果将在上传完成后出现
+Upload results for=上传结果
+s upload results=的上传结果
+Go Back=返回文件目录
+SUCCESS=成功
+Uploaded=已上传
+Speed=速度
+{.comment|"While uploading (sth) an error occured".}
+While uploading=上传
+an error occured=失败
+Username=用户名
+Password=密码
+Sorry, previewing is not sopported by your browser=抱歉，您的浏览器不支持此预览
+You can view and control the preview here=您可以在此处查看和控制预览
+Previewing not supported, attempting to download...=预览不支持，正在尝试下载……
+Tap photo to enlarge; Right-click/Long-press to save=点击照片以放大；右键/长按以保存
+Click to download=点击下载
+Close preview frame=关闭预览框
+Expand preview frame=展开预览框
+Preview Opened=预览已打开
+Slide up the screen to see if using a mobile=手机用户请上翻页面查看
+Tap here to download=点击此处下载
+Tap here to enlarge=点击此处放大
+Starting Download=开始下载
+Rotate your device to fullscreen if mobile=手机用户可横屏以全屏
