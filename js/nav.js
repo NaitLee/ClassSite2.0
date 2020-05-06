@@ -2,15 +2,15 @@ window.onscroll = function () {
   //回到顶部
   var sllTop = document.documentElement.scrollTop || document.body.scrollTop;
   if (sllTop > 240) {
-    $('#get-top').css('display', 'block')
+    $('#get-top').fadeIn()
   } else {
-    $('#get-top').css('display', 'none')
+    $('#get-top').fadeOut()
   }
 }
 $('#get-top').click(function () {
   $('body,html').animate({
     scrollTop: 0
-  }, 800); //点击回到顶部按钮，缓懂回到顶部,数字越小越快
+  }, 500); //点击回到顶部按钮，缓懂回到顶部,数字越小越快
 })
 // 显示/隐藏二级菜单
 $(".left-menu-btn").hover(function () {
@@ -80,11 +80,11 @@ function browserRedirect() {
 
 var now = -1;
 var resLength = 0;
-var thisSearch = 'https://www.baidu.com/s?wd=';
-var thisSearchIcon = './logo.jpg';
+var thisSearch = 'https://cn.bing.com/search?q=';
+var thisSearchIcon = '/pic/deco/logo_3.jpg';
 var storage = window.localStorage;
 if (!storage.stopHot) {
-  storage.stopHot = true
+  storage.stopHot = false;
 }
 storage.stopHot == 'false' ? $('#hot-btn').addClass('off') : $('#hot-btn').removeClass('off');
 var ssData = storage.searchEngine;
