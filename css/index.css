@@ -13,14 +13,13 @@
 body {
     margin: 0px;
     border: 0px;
-    text-align: center;
-    color: white;
-    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", SimHei, "黑体", sans-serif;
 }
 .pond {
     text-align: center;
     color: white;
-    font-family: "Monda", "Tahoma", "Microsoft YaHei", "微软雅黑", SimHei, "黑体", sans-serif;
+    font-family: "Monda", "Bahnschrift", "Noto Sans", "Segoe UI Emoji",
+        "Microsoft YaHei UI", "微软雅黑", "SimHei", "黑体", "Microsoft JhengHei", "Yu Gothic UI",
+        "Malgun Gothic", "Lucida Sans Unicode", "Arial Unicode MS", sans-serif;
 }
 @keyframes bgsplash {
     /* A junky animation that lets the bg splash and zoom at the center of screen */
@@ -39,6 +38,35 @@ body {
         height: 100%;
     }
 }
+@keyframes bgbreath {
+    0% {
+        transform: translate(0, 0) scale(1.0);
+    }
+    12.5% {
+        transform: translate(0px, 0px) scale(1.08);
+    }
+    25% {
+        transform: translate(-13px, -12px) scale(1.16);
+    }
+    37.5% {
+        transform: translate(18px, -35px) scale(1.08);
+    }
+    50% {
+        transform: translate(-7px, -8px) scale(1.0);
+    }
+    62.5% {
+        transform: translate(0px, 49px) scale(1.08);
+    }
+    75% {
+        transform: translate(-32px, -12px) scale(1.16);
+    }
+    87.5% {
+        transform: translate(39px, 0px) scale(1.08);
+    }
+    100% {
+        transform: translate(0, 0) scale(1.0);
+    }
+}
 #bg {
     width: 100%;
     height: 100%;
@@ -46,18 +74,40 @@ body {
     margin: 0px;
     z-index: -2;
     opacity: 0;
-    background-size: cover;
+    background: center / cover;
     animation: bgsplash 0.33s ease-out 1.5s;
     animation-fill-mode: forwards;
 }
-#bgmask {
+/* Starry Night by Lea Verou */
+/* https://leaverou.github.io/css3patterns/ */
+.bgcss3 {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0px;
+    z-index: -2;
+    background-color:black;
+    background-image:
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    animation: 72s ease-in-out 0.66s alternate infinite bgbreath;
+    animation-fill-mode: forwards;
+}
+h2.hidden {
+    display: none;
+}
+.bgmask {
     width: 100%;
     height: 100%;
     position: fixed;
     margin: 0px;
     opacity: 0;
     z-index: -1;
-    background-image: url("/pic/deco/blackmask.png");
+    background-color: rgba(0, 0, 0, 0.75);
     animation: fadein 0.5s ease-out 0s;
     animation-fill-mode: forwards;
 }
@@ -84,6 +134,7 @@ body {
 #title {
     font-size: 2.4em;
     margin: 0;
+    padding: 0.3em;
 }
 .browsehappy {
     background-color: #c54141;
@@ -129,6 +180,10 @@ body {
     right: 0;
     margin-left: auto;
 }
+.navicon {
+    vertical-align: middle;
+    height: 32px;
+}
 @keyframes swing {
     0% {
         left: 0em;
@@ -145,8 +200,12 @@ body {
     font-style: italic;
     font-size: 1.4em;
     padding-left: 0.5em;
+    padding-right: 0.5em;
     animation: swing 2.4s ease-in 0.1s infinite;
     animation-fill-mode: forwards;
+}
+.item.arrow::after {
+    content: ">>";
 }
 .item.description {
     font-size: 0.66em;
@@ -162,13 +221,12 @@ body {
         width: 15%;
     }
     to {
-        width: 57%;
+        width: 60%;
     }
 }
 .hitokoto {
     position: relative;
     width: 15%;
-    margin: auto;
     font-size: 1.6em;
     /* font-weight: 700; */ /* bold */
     text-align: left;
@@ -191,7 +249,7 @@ body {
     /* display: none; */
     opacity: 0;
     text-align: center;
-    padding: 15px 50px;
+    padding: 15px 64px;
     min-height: 1.8em;
     animation: fadein 0.5s ease-out 2s;
     animation-fill-mode: forwards;
@@ -205,6 +263,25 @@ body {
 #hitokotop {
     min-height: 1.6em;
 }
+abbr {
+    text-decoration: none;
+}
+#get-top {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 3em;
+    line-height: 1em;
+    width: 1em;
+    padding: 0.2em 0.2em;
+    margin: 0.6em;
+    background-color: rgba(0, 0, 0, 0.75);
+    transform: rotate(-90deg);
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+    font-family: monospace;
+}
 .copyright {
     font-size: 0.8em;
     color: #666666;
@@ -212,6 +289,14 @@ body {
     margin: 48px 0px;
     /* display: none; */
 }
+span.showonhover {
+    opacity: 0.24;
+    transition: all 1s;
+}
+span.showonhover:hover {
+    opacity: 1;
+}
+
 /* Below is for devices that goes with a width < 950px */
 @media (max-width: 950px){
     #title {
@@ -243,9 +328,18 @@ body {
     .hitokoto {
         width: 100%;
         font-size: 1em;
+        margin-bottom: 24px;
+    }
+    #hitokoto {
+        padding: 18px 24px;
+    }
+    #get-top {
+        transform: scale(0.66) rotate(-90deg);
+        margin: 0 0.2em;
     }
     .copyright {
         margin: 8px auto;
-        color: #333333;
+        /* color: #333333; */
+        font-size: 0.6em;
     }
 }

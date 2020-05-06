@@ -66,11 +66,10 @@ ul {
 }
 .sousuo {
 	padding: 16px 0;
-    transition: all 0.2s;
-    -webkit-transition: all 0.2s; /* Safari */
+	transition: none;
 }
 .sousuo:hover {
-    transform: scale(1.05);
+    transform: none;
 }
 .search {
 	position: relative;
@@ -103,7 +102,7 @@ ul {
 	height: 50px;
 	line-height: 50px;
 	font-size: 16px;
-	background: #eeeeeecc;
+	background: rgba(238, 238, 238, 0.8);
 	color: black;
 	box-shadow: 0px 5px 20px 0px #d8d7d7;
 	border: none;
@@ -246,7 +245,6 @@ header {
 	height: 50px;
 	color: white;
 	/* background: #FFF; */
-	/* background-image: url("/pic/deco/blackmask.png"); */
 }
 header .main {
 	position: relative;
@@ -435,7 +433,7 @@ header .animated2 .bottom {
 .main-index{
 	padding-bottom: 50px;
 }
-#get-top {
+/* #get-top {
 	width: 40px;
 	height: 40px;
 	background: #03b8cf;
@@ -453,7 +451,7 @@ header .animated2 .bottom {
 #get-top i {
 	margin: 0;
 	font-size: 20px;
-}
+} */
 .footer {
 	width: 100%;
 	background-color: #fff;
@@ -468,6 +466,9 @@ header .animated2 .bottom {
 	color: #959595;
 }	
 @media (min-width: 992px){
+	.sousuo:hover {
+		transform: scale(1.05);
+	}
 	.search {
 		width: 650px;
 	}
@@ -515,8 +516,7 @@ header .animated2 .bottom {
 		vertical-align: -10px;
 	}
 	header .nav {
-		float: left;
-		margin-left: 25px;
+		padding-left: 2.4em;
 		padding-top: 0px;
 		height: 100%;
 		display: block;
@@ -540,7 +540,7 @@ header .animated2 .bottom {
 	header .nav a:hover {
 		border-color: #459df5;
 		/* color: #459df5; */
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	.content-box {
 		padding: 0 10px;
@@ -554,6 +554,7 @@ header .animated2 .bottom {
 	.sousuo {
 		padding: 10px 0 50px 0;
 		margin-top: 0;
+		transition: all 0.2s;
 	}
 	.search-clear {
 		right: 95px;
