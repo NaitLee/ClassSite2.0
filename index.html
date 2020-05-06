@@ -5,41 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+    /*    
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) 2019-2020 NaitLee Soft
+
+        The JavaScript code in this page is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.   
+
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+    */
+    </script>
     <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/clearscrollbar.css" />
     <link rel="stylesheet" href="/css/nav.css" />
-    <!-- <link rel="stylesheet" href="/css/zui.min.css" /> -->
     <script src="/js/jquery1.11.js"></script>
     <script src="/js/consoletrick.js"></script>
-    <title>1824 班网站::主页</title>
+    <title>1824 班级网站::主页</title>
 </head>
 <body>
+    <a href="/jslicense.html" style="display: none;" data-jslicense="1">
+        JavaScript license information
+    </a>
     <div class="pond">
         <!-- Background image and blackening mask -->
         <div id="bg"></div>
-        <div id="bgmask"></div>
+        <div class="bgmask"></div>
+        <!-- <div class="bgcss3"></div> -->
         <!-- Navigation in header, from a template -->
         <header>
             <h1 class="logo">
                 <a href="index.html" style="text-decoration: none;">
-                    <img src="pic/deco/ico.png" />
-                    <span>1824 班网站</span>
+                    <img src="/pic/deco/ico.png" alt="🍊" />
+                    <span>1824 班级网站</span>
                 </a>
             </h1>
             <nav class="nav">
+                <h2 class="hidden">Navigation</h2>
                 <!-- Navigation items, will be inited with JS. -->
                 <ul id="nav">
                 </ul>
             </nav>
         </header>
         <div class="main">
-            <div id="title">1824 班网站<br />欢迎您</div>
+            <div id="title">1824 班级网站<br />欢迎您</div>
             <!-- Outdated browser alert (of course IE) -->
             <!--[if lt IE 9]><div class="browsehappy">如您所见，网页破碎不堪……<br />……您的浏览器过旧，请及时更新/更换以确保浏览体验和安全</div><![endif]-->
             <!-- Search box, from a template -->
             <section class="sousuo">
+                <h2 class="hidden">Search</h2>
                 <div class="search">
                     <div class="search-box">
-                        <img class="search-icon" src="/pic/deco/logo_4.jpg">
+                        <img class="search-icon" src="/pic/deco/logo_4.jpg" alt="🔎" />
                         <input type="text" id="txt" class="search-input" placeholder="善用搜索">
                         <button class="search-btn visible-sm visible-md visible-lg" id="search-btn">搜索</button>
                         <i class="search-clear icon icon-remove-sign" style="display: none;"></i>
@@ -61,20 +93,32 @@
             </section>
             <!-- Hitokoto, here is my specified structure for printing effect. Detail: https://hitokoto.cn -->
             <div class="hitokoto">
+                <h2 class="hidden">Hitokoto</h2>
                 <div class="bracket left">『</div>
                 <div id="hitokoto"></div>
                 <div class="hitokotod"><span id="hitokotop"></span><span id="cursor">|</span></div>
                 <div class="bracket right">』</div>
             </div>
             <!-- Items, will be inited with JS. -->
+            <h2 class="hidden">Items</h2>
             <div id="itemlist">
             </div>
+            <!-- Get to top -->
+            <div id="get-top"><abbr title="返回顶部">&gt;</abbr></div>
             <!-- Copyright -->
-            <div class="copyright">Copyright&copy; 2019-2020 NaitLee Soft. All rights reserved.<br />Site powered by <a href="http://www.rejetto.com/hfs/" target="_blank">HTTP File System</a>.</div>
+            <h2 class="hidden">Copyright</h2>
+            <div class="copyright"><a href="https://www.gnu.org/licenses/copyleft.html" target="_blank">Copyleft&copy;</a> 2019-2020 NaitLee Soft. Some rights reserved.<br />
+                <span class="showonhover">This project is available on <a href="https://github.com/NaitLee/ClassSite2.0"
+                        target="_blank">GitHub</a> with <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL3</a> licenced.
+                    <br />Site powered by <a href="http://www.rejetto.com/hfs/" target="_blank">HTTP File System</a>.
+                    <br /><a href="http://www.gnu.org/" target="_blank">
+                        <img src="/pic/deco/agplv3-with-text-162x68.png" />
+                    </a>
+                </span>
+            </div>
         </div>
     </div>
     <script src="/js/randombg.js"></script>
-    <!-- <script src="/js/zui.min.js"></script> -->
     <script src="/js/nav.js"></script>
     <script src="/js/initnav.js"></script>
     <script src="/js/inititems.js"></script>
